@@ -1,0 +1,453 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenApi specification - Kyaw Latt",
+        "description": "OpenApi documentation for Spring Security",
+        "termsOfService": "Terms of service",
+        "contact": {
+            "name": "Kyaw Latt",
+            "url": "https://some-url.com",
+            "email": "test@gmail.com"
+        },
+        "license": {
+            "name": "Licence name",
+            "url": "https://some-url.com"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "Local ENV"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/api/v1/horny-guy/register": {
+            "post": {
+                "tags": [
+                    "horny-guy-controller"
+                ],
+                "operationId": "register",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/date-girl/register": {
+            "post": {
+                "tags": [
+                    "date-girl-controller"
+                ],
+                "operationId": "register_1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/register": {
+            "post": {
+                "tags": [
+                    "Authentication-Controller"
+                ],
+                "operationId": "register_2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/refresh-token": {
+            "post": {
+                "tags": [
+                    "Authentication-Controller"
+                ],
+                "operationId": "refreshToken",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/authenticate": {
+            "post": {
+                "tags": [
+                    "Authentication-Controller"
+                ],
+                "operationId": "authenticate",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthenticationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/save": {
+            "post": {
+                "tags": [
+                    "admin-controller"
+                ],
+                "operationId": "saveProfile",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProfileDTO"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/register": {
+            "post": {
+                "tags": [
+                    "admin-controller"
+                ],
+                "operationId": "register_3",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/horny-guy/find-all": {
+            "get": {
+                "tags": [
+                    "horny-guy-controller"
+                ],
+                "operationId": "findAll",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserDTO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/date-girl/find-all": {
+            "get": {
+                "tags": [
+                    "date-girl-controller"
+                ],
+                "operationId": "findAll_1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserDTO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/admin/find-all": {
+            "get": {
+                "tags": [
+                    "admin-controller"
+                ],
+                "operationId": "findAll_2",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserDTO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UserDTO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "userTypes": {
+                        "type": "string",
+                        "enum": [
+                            "HORNY_GUY",
+                            "DATE_GIRL",
+                            "ADMIN"
+                        ]
+                    },
+                    "phoneNum": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "referenceCode": {
+                        "type": "string"
+                    },
+                    "adminCode": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AUTHResponse": {
+                "type": "object",
+                "properties": {
+                    "msg": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "timestamp": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "AuthenticationRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ProfileDTO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "faceImg": {
+                        "type": "string"
+                    },
+                    "blurImg": {
+                        "type": "string"
+                    },
+                    "frontImg": {
+                        "type": "string"
+                    },
+                    "sideImg": {
+                        "type": "string"
+                    },
+                    "backImg": {
+                        "type": "string"
+                    },
+                    "boobSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "waistSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "hipSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "height": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "userId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "userDTO": {
+                        "$ref": "#/components/schemas/UserDTO"
+                    },
+                    "faceImage": {
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "blurImage": {
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "frontImage": {
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "sideImage": {
+                        "type": "string",
+                        "format": "binary"
+                    },
+                    "backImage": {
+                        "type": "string",
+                        "format": "binary"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT auth description",
+                "in": "header",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

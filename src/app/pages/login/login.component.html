@@ -1,0 +1,35 @@
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-center p-4 left-column">
+                        <h2 class="mb-3 text-center fw-bold">Welcome Back!</h2>
+                        <p class="mb-3 text-center">
+                            To keep connected with us please login with your personal info. If you haven't signed up yet, please     
+                        </p>
+                        <button (click)="onSignUp()" class="btn btn-primary">Sign Up</button>
+                    </div>
+                    <div class="col-md-6 p-4">
+                        <h3 class="mb-5 text-center">Sign In</h3>
+                        <form (ngSubmit)="onSignIn()">
+                            <div class="input-wrapper mb-4">
+                                <i class="fa-solid fa-envelope icon"></i>
+                                <input [(ngModel)]="authRequest.email" type="email" class="form-control custom-input" placeholder="Enter your email" name="email" required>
+                            </div>
+                            <div class="input-wrapper mb-3">
+                                <i class="fa-solid fa-lock icon"></i>
+                                <input [(ngModel)]="authRequest.password" type="password" class="form-control custom-input" placeholder="Enter your password" name="password" required>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <input type="checkbox" class="me-1"> Remember me
+                                <a href="#" class="forgot ms-3">Forgot Password?</a>
+                            </div>
+                            <button (click)="onSignIn()" type="submit" class="btn w-100 mb-5 signIn">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

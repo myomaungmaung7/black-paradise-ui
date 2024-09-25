@@ -1,0 +1,95 @@
+.container {
+    max-width: 100%; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0.3, 0, 0.5);
+}
+
+.vh-100 {
+    min-height: 100vh; 
+}
+  
+.left-column {
+    background: #141E30;
+    color: #e1e1e1;
+    letter-spacing: 1px;
+}
+
+.left-column .btn-primary {
+  background-color: #243B55; 
+  border: none;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.left-column .btn-primary:hover {
+    background-color: #e1e1e1; 
+    color: #243B55; 
+}
+
+h3 {
+    color: #243B55;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #243B55;
+}
+
+.custom-input {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-left: 40px;
+    height: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: box-shadow 0.3s ease;
+}
+
+.custom-input::placeholder {
+    color: #243B55;
+    letter-spacing: 1px;
+}
+
+.custom-input:focus {
+    border-bottom: 2px solid #243B55;
+}
+
+.forgot {
+    text-decoration: none;
+}
+
+.forgot:hover {
+    color: #243B55; 
+}
+
+.signIn {
+    background-color: #243B55; 
+    color: #e1e1e1;
+    border: none;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.signIn:hover {
+    background-color: #e1e1e1; 
+    color: #243B55; 
+}
