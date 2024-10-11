@@ -8,15 +8,15 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { AuthenticationRequest } from '../../models/authentication-request';
 import { AuthResponse } from '../../models/auth-response';
+import { ChangePasswordRequestDto } from '../../models/change-password-request-dto';
 
-export interface Authenticate$Params {
-      body: AuthenticationRequest
+export interface ChangePassword$Params {
+      body: ChangePasswordRequestDto
 }
 
-export function authenticate(http: HttpClient, rootUrl: string, params: Authenticate$Params, context?: HttpContext): Observable<StrictHttpResponse<AuthResponse>> {
-  const rb = new RequestBuilder(rootUrl, authenticate.PATH, 'post');
+export function changePassword(http: HttpClient, rootUrl: string, params: ChangePassword$Params, context?: HttpContext): Observable<StrictHttpResponse<AuthResponse>> {
+  const rb = new RequestBuilder(rootUrl, changePassword.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
   }
@@ -31,4 +31,4 @@ export function authenticate(http: HttpClient, rootUrl: string, params: Authenti
   );
 }
 
-authenticate.PATH = '/api/v1/auth/authenticate';
+changePassword.PATH = '/api/v1/admin/change-password';

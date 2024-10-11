@@ -4,5 +4,6 @@
 
 export type { AuthenticationRequest } from './models/authentication-request';
 export type { AuthResponse } from './models/auth-response';
+export type { ChangePasswordRequestDto } from './models/change-password-request-dto';
 export type { ProfileDto } from './models/profile-dto';
 export type { UserDto } from './models/user-dto';

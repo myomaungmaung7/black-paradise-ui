@@ -12,6 +12,8 @@ import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
 import { AuthResponse } from '../models/auth-response';
+import { changePassword } from '../fn/admin-controller/change-password';
+import { ChangePassword$Params } from '../fn/admin-controller/change-password';
 import { findAll2 } from '../fn/admin-controller/find-all-2';
 import { FindAll2$Params } from '../fn/admin-controller/find-all-2';
 import { register3 } from '../fn/admin-controller/register-3';
@@ -76,6 +78,31 @@ export class AdminControllerService extends BaseService {
    */
   register3(params: Register3$Params, context?: HttpContext): Observable<AuthResponse> {
     return this.register3$Response(params, context).pipe(
+      map((r: StrictHttpResponse<AuthResponse>): AuthResponse => r.body)
+    );
+  }
+
+  /** Path part for operation `changePassword()` */
+  static readonly ChangePasswordPath = '/api/v1/admin/change-password';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `changePassword()` instead.
+   *
+   * This method sends `application/json` and handles request body of type `application/json`.
+   */
+  changePassword$Response(params: ChangePassword$Params, context?: HttpContext): Observable<StrictHttpResponse<AuthResponse>> {
+    return changePassword(this.http, this.rootUrl, params, context);
+  }
+
+  /**
+   * This method provides access only to the response body.
+   * To access the full response (for headers, for example), `changePassword$Response()` instead.
+   *
+   * This method sends `application/json` and handles request body of type `application/json`.
+   */
+  changePassword(params: ChangePassword$Params, context?: HttpContext): Observable<AuthResponse> {
+    return this.changePassword$Response(params, context).pipe(
       map((r: StrictHttpResponse<AuthResponse>): AuthResponse => r.body)
     );
   }

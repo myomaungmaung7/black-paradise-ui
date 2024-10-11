@@ -219,6 +219,36 @@
                 }
             }
         },
+        "/api/v1/admin/change-password": {
+            "post": {
+                "tags": [
+                    "admin-controller"
+                ],
+                "operationId": "changePassword",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChangePasswordRequestDTO"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AUTHResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/horny-guy/find-all": {
             "get": {
                 "tags": [
@@ -436,6 +466,17 @@
                     "backImage": {
                         "type": "string",
                         "format": "binary"
+                    }
+                }
+            },
+            "ChangePasswordRequestDTO": {
+                "type": "object",
+                "properties": {
+                    "oldPassword": {
+                        "type": "string"
+                    },
+                    "newPassword": {
+                        "type": "string"
                     }
                 }
             }
